@@ -10,6 +10,8 @@ import javax.sql.DataSource;
 
 /**
  * 针对set方法上上的@Inject
+ *
+ * 内省只能 省属性   反射既可以反射字段也可以属性
  */
 public class DaoFactory {
 

@@ -9,11 +9,10 @@ import java.util.List;
  * 有利也有弊。
  * 缺点：相当于修改Java源代码了，需要重新编译。
  */
-
 @SuppressWarnings("unchecked")
 public class Demo1 {
 
-	@Override  //重写注解，告诉编译器帮我检查重写的对不对
+	@Override  //重写注解，告诉编译器帮我检查是不是重写父类的方法   如果父类没有这个方法报错
 	public boolean equals(@SuppressWarnings("unchecked")  Object obj) {
 		return super.equals(obj);
 	}
@@ -30,7 +29,7 @@ public class Demo1 {
 		
 	}
 	
-	@MyAnnotation1(gender=Gender.男, my2=@MyAnnotation2(name="abc"),i={1,2,3})   //继承性
+	@MyAnnotation1(gender=Gender.男, my2=@MyAnnotation2(name="abc"), i={1,2,3})   //继承性
 	public void cccc(){
 		
 	}
@@ -39,9 +38,13 @@ public class Demo1 {
 	public void dddd(){
 		
 	}
+
+	String[] aa = {"aa"} ;
 }
 
-
+/**
+ * D类继承了父类的所有方法   父类中若某个方法的注解有@Inherited 则继承的方法上也有该注解   否则注解是不会被继承的
+ */
 class D extends Demo1{
 	
 	public void cccc(){

@@ -19,12 +19,12 @@ public @interface MyAnnotation1 {
 	//还支持枚举
 	Gender gender() default Gender.男;
 	
-	//还可以是其他注解
+	//还可以是其他注解  相当于xml的子元素
 	MyAnnotation2 my2() default @MyAnnotation2(name="llll");
 	
 	Class clazz() default String.class;
 	
-	//还可以是以上注解的一维数组
+	//还可以是以上类型的一维数组
 	String[] ss() default {"aa","bbb"};
 	int[] i() default {1,2};
 	
